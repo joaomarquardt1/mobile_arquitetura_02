@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'data/datasource/product_api_datasource.dart';
 import 'data/repository/product_repository_impl.dart';
 import 'presentation/viewmodel/product_viewmodel.dart';
-import 'presentation/pages/product_page.dart';
+import 'presentation/pages/home_page.dart';
 
 void main() {
   final datasource = ProductApiDataSource();
@@ -21,10 +21,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: const Text("Produtos")),
-        body: ProductPage(viewModel),
+      title: 'Loja de Produtos',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        useMaterial3: true,
       ),
+      home: HomePage(viewModel),
     );
   }
 }
